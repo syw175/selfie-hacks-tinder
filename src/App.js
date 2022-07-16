@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// Import web pages and components
 
-function App() {
+import React from 'react';
+import { HashRouter, Routes, Route } from "react-router-dom";
+
+
+import homePage from "./webpages/homePage";
+import landingPage from "./webpages/landingPage";
+import signupPage from "./webpages/signupPage";
+
+
+// Render the homepage component
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>Hello Yall!</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter> 
+      <Routes>
+        <Route path="/" element={<homePage />} />
+        <Route path="/landing" element={<landingPage />} />
+        <Route path="/signup" element={<signupPage />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
